@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ClinicaMobile</string>
+    <string name="logo_image">logo image</string>
+    <string name="search_logo">search logo</string>
+    <string name="patient_name">patient name</string>
+</resources>

@@ -57,10 +57,9 @@
     <fragment
         android:id="@+id/fragment"
         android:name="tk.williamsouza.clinicamobile.HeaderFragment"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="340dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

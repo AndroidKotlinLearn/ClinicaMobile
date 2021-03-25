@@ -3,4 +3,9 @@
     <string name="logo_image">logo image</string>
     <string name="search_logo">search logo</string>
     <string name="patient_name">patient name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="novo">Novo</string>
+    <string name="procurar">Procurar</string>
+    <string name="todos">Todos</string>
 </resources>

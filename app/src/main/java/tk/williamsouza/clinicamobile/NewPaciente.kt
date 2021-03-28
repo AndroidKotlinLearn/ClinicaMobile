@@ -47,9 +47,9 @@ class NewPaciente : AppCompatActivity() {
         val db = dbHelper?.writableDatabase
 
         val name = findViewById<TextView>(R.id.textName).text.toString()
-        val sex = findViewById<TextView>(R.id.sex).text.toString()
+        val sex = findViewById<Spinner>(R.id.sex).selectedItem.toString()
         val birthDate = findViewById<TextView>(R.id.birthDate).text.toString()
-        val civilState = findViewById<TextView>(R.id.civilState).text.toString()
+        val civilState = findViewById<Spinner>(R.id.civilState).selectedItem.toString()
         val email = findViewById<TextView>(R.id.email).text.toString()
         val address = findViewById<TextView>(R.id.addressStreet).text.toString()
         val profession = findViewById<TextView>(R.id.profession).text.toString()
@@ -71,7 +71,7 @@ class NewPaciente : AppCompatActivity() {
             put(PatientContract.PatientEntry.COLUMN_NAME_EVOLUTION, evolution)
         }
 
-        val newRowId = db?.insert(PatientContract.PatientEntry.TABLE_NAME, null, values)
+        db?.insert(PatientContract.PatientEntry.TABLE_NAME, null, values)
 
         val intent = Intent(this, AllPacientes::class.java).apply {  }
         startActivity(intent)

@@ -62,6 +62,7 @@ class AllPacientes : AppCompatActivity() {
     private fun initRecyclerView(){
         val recycler_view = findViewById<RecyclerView>(R.id.patients)
         recycler_view.layoutManager = LinearLayoutManager(this@AllPacientes)
+        patientsAdapter = PatientsAdapter()
         recycler_view.adapter = patientsAdapter
     }
 }

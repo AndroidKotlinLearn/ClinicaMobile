@@ -15,6 +15,7 @@
         tools:layout_editor_absoluteX="202dp" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/patients"
         android:layout_width="405dp"
         android:layout_height="626dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -3,17 +3,22 @@ package tk.williamsouza.clinicamobile
 import android.os.Bundle
 import android.provider.BaseColumns
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class AllPacientes : AppCompatActivity() {
     private var dbHelper : PatientDbHelper? = null
+    private lateinit var patientsAdapter: PatientsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_pacientes)
         dbHelper = PatientDbHelper(this)
+        initRecyclerView()
+        addDataSet()
     }
 
-    fun readFromDb() {
+    fun readFromDb(): List<Patient> {
         val db = dbHelper?.readableDatabase
         val projection = arrayOf(BaseColumns._ID, PatientContract.PatientEntry.COLUMN_NAME_NAME)
 
@@ -35,5 +40,28 @@ class AllPacientes : AppCompatActivity() {
                 sortOrder               // The sort order
 
         )
+        val patients = ArrayList<Patient>()
+        cursor?.moveToFirst()
+        if (cursor != null) {
+            while(!cursor.isAfterLast()) {
+                patients.add(Patient(cursor.getString(cursor.getColumnIndex("nome"))))
+            }
+        }
+
+        return patients
+
+
+
+    }
+
+    private fun addDataSet() {
+        val data = readFromDb()
+        patientsAdapter.submitList(data)
+    }
+
+    private fun initRecyclerView(){
+        val recycler_view = findViewById<RecyclerView>(R.id.patients)
+        recycler_view.layoutManager = LinearLayoutManager(this@AllPacientes)
+        recycler_view.adapter = patientsAdapter
     }
 }

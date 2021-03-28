@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".NewPaciente">
 
+    <EditText
+        android:id="@+id/addressStreet"
+        android:layout_width="374dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="13dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/endereco"
+        android:inputType="textPostalAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
     <fragment
         android:id="@+id/fragment2"
         android:name="tk.williamsouza.clinicamobile.HeaderFragment"
@@ -22,11 +36,105 @@
         android:layout_marginTop="20dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/complete_name"
+        android:hint="@string/nome_completo"
         android:inputType="textPersonName"
-        android:text="@string/nome_completo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment2" />
+
+    <EditText
+        android:id="@+id/profession"
+        android:layout_width="174dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/profissao"
+        android:inputType="textNoSuggestions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressStreet" />
+
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="174dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/telefone"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profession"
+        app:layout_constraintTop_toBottomOf="@+id/addressStreet" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="374dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="13dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/civilState" />
+
+    <Spinner
+        android:id="@+id/sex"
+        android:layout_width="79dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textName" />
+
+    <Spinner
+        android:id="@+id/civilState"
+        android:layout_width="143dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/sex"
+        app:layout_constraintTop_toBottomOf="@+id/textName" />
+
+    <EditText
+        android:id="@+id/birthDate"
+        android:layout_width="132dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/date"
+        android:inputType="date"
+        app:layout_constraintStart_toEndOf="@+id/civilState"
+        app:layout_constraintTop_toBottomOf="@+id/textName" />
+
+    <EditText
+        android:id="@+id/observation"
+        android:layout_width="373dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/observacao"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profession" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/salvar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/observation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

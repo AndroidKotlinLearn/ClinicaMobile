@@ -30,7 +30,9 @@ class HeaderFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_header, container, false)
         val newButton = view.findViewById<Button>(R.id.newHeaderButton)
+
         newButton.setOnClickListener { view -> openNewFragment(view) }
+
         return view
     }
 
@@ -53,4 +55,5 @@ class HeaderFragment : Fragment() {
         val intent = Intent(this.context, NewPaciente::class.java).apply {}
         startActivity(intent)
     }
+
 }

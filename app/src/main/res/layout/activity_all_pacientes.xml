@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".AllPacientes">
 
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="tk.williamsouza.clinicamobile.HeaderFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="202dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

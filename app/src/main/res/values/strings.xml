@@ -8,4 +8,6 @@
     <string name="novo">Novo</string>
     <string name="procurar">Procurar</string>
     <string name="todos">Todos</string>
+    <string name="complete_name">complete name</string>
+    <string name="nome_completo">Nome Completo</string>
 </resources>

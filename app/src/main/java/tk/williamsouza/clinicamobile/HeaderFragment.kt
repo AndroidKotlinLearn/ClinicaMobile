@@ -1,9 +1,11 @@
 package tk.williamsouza.clinicamobile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,12 +21,17 @@ class HeaderFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
         }
+
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_header, container, false)
+        val view = inflater.inflate(R.layout.fragment_header, container, false)
+        val newButton = view.findViewById<Button>(R.id.newHeaderButton)
+        newButton.setOnClickListener { view -> openNewFragment(view) }
+        return view
     }
 
     companion object {
@@ -40,5 +47,10 @@ class HeaderFragment : Fragment() {
                     arguments = Bundle().apply {
                     }
                 }
+    }
+
+    fun openNewFragment(view : View) {
+        val intent = Intent(this.context, NewPaciente::class.java).apply {}
+        startActivity(intent)
     }
 }

@@ -30,8 +30,12 @@ class HeaderFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_header, container, false)
         val newButton = view.findViewById<Button>(R.id.newHeaderButton)
+        val searchButton = view.findViewById<Button>(R.id.searchHeaderButton)
+        val allButton = view.findViewById<Button>(R.id.listHeaderButton)
 
-        newButton.setOnClickListener { view -> openNewFragment(view) }
+        newButton.setOnClickListener { view -> openNewActivity(view) }
+        searchButton.setOnClickListener { view -> openHomeActivity(view) }
+        allButton.setOnClickListener { view -> openAllActivity(view) }
 
         return view
     }
@@ -51,9 +55,21 @@ class HeaderFragment : Fragment() {
                 }
     }
 
-    fun openNewFragment(view : View) {
+    fun openNewActivity(view : View) {
         val intent = Intent(this.context, NewPaciente::class.java).apply {}
         startActivity(intent)
     }
+
+    fun openHomeActivity(view : View) {
+        val intent = Intent(this.context, MainActivity::class.java).apply {}
+        startActivity(intent)
+    }
+
+    fun openAllActivity(view : View) {
+        val intent = Intent(this.context, AllPacientes::class.java).apply {}
+        startActivity(intent)
+    }
+
+
 
 }

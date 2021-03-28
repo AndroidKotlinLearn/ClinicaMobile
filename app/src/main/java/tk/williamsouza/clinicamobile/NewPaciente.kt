@@ -44,7 +44,7 @@ class NewPaciente : AppCompatActivity() {
     }
 
     fun writeToDb() {
-        val db = dbHelper.writableDatabase
+        val db = dbHelper?.writableDatabase
 
         val name = findViewById<TextView>(R.id.textName).text.toString()
         val sex = findViewById<TextView>(R.id.sex).text.toString()
@@ -71,7 +71,7 @@ class NewPaciente : AppCompatActivity() {
             put(PatientContract.PatientEntry.COLUMN_NAME_EVOLUTION, evolution)
         }
 
-        val newRowId = db.insert(PatientContract.PatientEntry.TABLE_NAME, null, values)
+        val newRowId = db?.insert(PatientContract.PatientEntry.TABLE_NAME, null, values)
 
         val intent = Intent(this, AllPacientes::class.java).apply {  }
         startActivity(intent)
